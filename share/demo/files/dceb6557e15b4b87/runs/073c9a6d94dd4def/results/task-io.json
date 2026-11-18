@@ -1,0 +1,918 @@
+{
+  "schema": "plant-task-io/1",
+  "action": "analysis",
+  "contract": {
+    "version": 1,
+    "inputs": [
+      {
+        "id": "libraries",
+        "type": "capture[]",
+        "label": "各物理捕获的输入",
+        "required": true
+      },
+      {
+        "id": "reference",
+        "type": "JSON",
+        "label": "稳定基因 ID 参考",
+        "required": true
+      },
+      {
+        "id": "parameters",
+        "type": "JSON",
+        "label": "有效参数及参考",
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "object",
+        "type": "H5AD",
+        "label": "注释前分析对象",
+        "required": true
+      },
+      {
+        "id": "products",
+        "type": "file[]",
+        "label": "任务产物",
+        "required": true
+      }
+    ]
+  },
+  "inputs": {
+    "parameters": [
+      {
+        "path": "runs/073c9a6d94dd4def/results/parameters.json"
+      }
+    ],
+    "libraries": [
+      {
+        "capture": "GSM5320262",
+        "path": "GSM5320262.h5ad",
+        "kind": "matrix",
+        "sample": "GSM5320262",
+        "modality": "snRNA"
+      }
+    ],
+    "reference": [
+      {
+        "path": "runs/073c9a6d94dd4def/results/parameters.json",
+        "selector": "/reference"
+      }
+    ]
+  },
+  "outputs": {
+    "products": [
+      {
+        "path": "runs/073c9a6d94dd4def/results/analysis.h5ad"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/analysis_spec.json"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/block-events.jsonl"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/captures/001/qc.tsv"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/cells.tsv"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/cluster_comparison.png"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/cluster_comparison.svg"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/cluster_comparison.tsv"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/cluster_membership_overlap.tsv"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/cluster_samples.tsv"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/__init__.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/advanced.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/ambient.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/analysis.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/blocks.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/catalog.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/component_jobs.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/emptydrops.R"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/inspection.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/picker.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/plots.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/ports.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/project_views.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/qc.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/replay_run.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/resources.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/scheduler.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/soupx.R"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/star_driver.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/starsolo.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/upstream.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/worker.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/code/workspace.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/embedding.png"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/embedding.svg"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/environment.json"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/execution-environment.json"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/input_manifest.json"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/inputs.json"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/parameters.json"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/pca.png"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/pca.svg"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/pca_variance.tsv"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/qc.png"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/qc.svg"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/qc_cells.tsv"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/qc_libraries.tsv"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/replay.py"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/report.html"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/source-versions.json"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/summary.json"
+      },
+      {
+        "path": "runs/073c9a6d94dd4def/results/workflow.json"
+      }
+    ],
+    "object": [
+      {
+        "path": "runs/073c9a6d94dd4def/results/analysis.h5ad"
+      }
+    ]
+  },
+  "input_files": [
+    {
+      "path": "GSM5320262.h5ad",
+      "bytes": 4773108,
+      "sha256": "4b39bf2165920fe6b3ef077586b65299862f487e9731a9d82ad9061958a8a412"
+    }
+  ],
+  "modules": [
+    {
+      "module": "qc",
+      "version": 1,
+      "engine": "SciPy / Scanpy Scrublet",
+      "capture": "GSM5320262",
+      "parameters": {
+        "min_counts": 1,
+        "min_genes": 1,
+        "mad_multiplier": 4.0,
+        "max_mito_pct": null,
+        "max_plastid_pct": null,
+        "doublet_mode": "report",
+        "expected_doublet_rate": 0.05
+      },
+      "observed": {
+        "id": "GSM5320262",
+        "sample": "GSM5320262",
+        "input_cells": 1200,
+        "retained_cells": 1200,
+        "median_counts": 1393.0,
+        "median_genes": 1096.5,
+        "matched_genes": {
+          "mito": {
+            "genes_in_set": 152,
+            "genes_measured": 152
+          },
+          "plastid": {
+            "genes_in_set": 133,
+            "genes_measured": 133
+          }
+        },
+        "mad_thresholds": {
+          "total_counts": 255.00629643122727,
+          "n_genes": 256.1129109548326
+        },
+        "doublets": {
+          "status": "scored",
+          "threshold": 0.229704773091301,
+          "eligible": 1200,
+          "predicted": 2,
+          "mode": "report",
+          "predicted_fraction": 0.0016666666666666668
+        },
+        "input_genes": 36917,
+        "rule_counts": {
+          "empty": 0,
+          "low_counts": 0,
+          "low_genes": 0,
+          "low_total_counts_MAD": 0,
+          "low_n_genes_MAD": 0
+        },
+        "multiple_rules": 0,
+        "shared_genes": 36917,
+        "discarded_counts_from_feature_join": 0,
+        "empty_after_feature_join": 0
+      },
+      "inputs": {
+        "counts": [
+          {
+            "path": "GSM5320262.h5ad"
+          }
+        ],
+        "reference": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/parameters.json",
+            "selector": "/reference"
+          }
+        ]
+      },
+      "outputs": {
+        "metrics": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/captures/001/qc.tsv"
+          }
+        ]
+      }
+    },
+    {
+      "module": "merge",
+      "version": 1,
+      "engine": "AnnData",
+      "capture": null,
+      "parameters": {
+        "feature_join": "strict"
+      },
+      "observed": {},
+      "inputs": {
+        "counts": [
+          {
+            "path": "GSM5320262.h5ad"
+          }
+        ],
+        "metrics": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/captures/001/qc.tsv"
+          }
+        ],
+        "corrected": []
+      },
+      "outputs": {
+        "merged": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "layers/counts"
+          }
+        ],
+        "audit": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/qc_libraries.tsv"
+          }
+        ]
+      }
+    },
+    {
+      "module": "features",
+      "version": 1,
+      "engine": "Scanpy",
+      "capture": null,
+      "parameters": {
+        "hvg_method": "seurat",
+        "hvg": 2000,
+        "analysis_layer": "counts",
+        "target_sum": 10000
+      },
+      "observed": {
+        "hvg": 2000,
+        "hvg_method": "seurat",
+        "analysis_layer": "counts"
+      },
+      "inputs": {
+        "merged": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "layers/counts"
+          }
+        ]
+      },
+      "outputs": {
+        "expression": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "X"
+          }
+        ],
+        "hvg": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "var/highly_variable"
+          }
+        ]
+      }
+    },
+    {
+      "module": "pca",
+      "version": 1,
+      "engine": "Scanpy PCA / Harmony",
+      "capture": null,
+      "parameters": {
+        "n_pcs": 30,
+        "integration": "none",
+        "seed": 42
+      },
+      "observed": {
+        "integration": {
+          "status": "not_requested",
+          "selected": "X_pca"
+        },
+        "pca_components": 30,
+        "representation": "X_pca"
+      },
+      "inputs": {
+        "expression": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "X"
+          }
+        ],
+        "hvg": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "var/highly_variable"
+          }
+        ]
+      },
+      "outputs": {
+        "pca": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obsm/X_pca"
+          }
+        ],
+        "representation": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obsm/X_pca"
+          }
+        ],
+        "variance": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/pca_variance.tsv"
+          }
+        ]
+      }
+    },
+    {
+      "module": "graph",
+      "version": 1,
+      "engine": "Scanpy neighbors",
+      "capture": null,
+      "parameters": {
+        "n_neighbors": 15,
+        "seed": 42
+      },
+      "observed": {
+        "neighbors": 15,
+        "graph_components": 1
+      },
+      "inputs": {
+        "representation": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obsm/X_pca"
+          }
+        ]
+      },
+      "outputs": {
+        "graph": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obsp/connectivities"
+          }
+        ],
+        "distances": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obsp/distances"
+          }
+        ]
+      }
+    },
+    {
+      "module": "umap",
+      "version": 1,
+      "engine": "Scanpy UMAP",
+      "capture": null,
+      "parameters": {
+        "min_dist": 0.5,
+        "seed": 42
+      },
+      "observed": {},
+      "inputs": {
+        "graph": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obsp/connectivities"
+          }
+        ]
+      },
+      "outputs": {
+        "embedding": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obsm/X_umap"
+          }
+        ]
+      }
+    },
+    {
+      "module": "leiden",
+      "version": 1,
+      "engine": "igraph Leiden / scikit-learn",
+      "capture": null,
+      "parameters": {
+        "resolutions": [
+          0.5,
+          1.0
+        ],
+        "seed": 42
+      },
+      "observed": {
+        "selected_resolution": 0.5,
+        "stability": [
+          {
+            "left": "leiden_0_5",
+            "right": "leiden_1_0",
+            "left_clusters": 8,
+            "right_clusters": 14,
+            "ARI": 0.5446065243292855
+          },
+          {
+            "left": "leiden_0_5",
+            "right": "leiden_seed_check",
+            "left_clusters": 8,
+            "right_clusters": 9,
+            "ARI": 0.7612864744531377
+          }
+        ]
+      },
+      "inputs": {
+        "graph": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obsp/connectivities"
+          }
+        ]
+      },
+      "outputs": {
+        "labels": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obs/leiden"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obs/leiden_seed_check"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obs/leiden_0_5"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad",
+            "selector": "obs/leiden_1_0"
+          }
+        ],
+        "comparison": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_comparison.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_membership_overlap.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_samples.tsv"
+          }
+        ]
+      }
+    },
+    {
+      "module": "export",
+      "version": 1,
+      "engine": "AnnData / Matplotlib",
+      "capture": null,
+      "parameters": {},
+      "observed": {},
+      "inputs": {
+        "products": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis_spec.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/block-events.jsonl"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/captures/001/qc.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cells.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_comparison.png"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_comparison.svg"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_comparison.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_membership_overlap.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_samples.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/__init__.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/advanced.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/ambient.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/analysis.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/blocks.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/catalog.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/component_jobs.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/emptydrops.R"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/inspection.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/picker.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/plots.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/ports.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/project_views.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/qc.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/replay_run.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/resources.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/scheduler.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/soupx.R"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/star_driver.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/starsolo.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/upstream.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/worker.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/workspace.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/embedding.png"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/embedding.svg"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/environment.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/execution-environment.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/input_manifest.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/inputs.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/parameters.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/pca.png"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/pca.svg"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/pca_variance.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/qc.png"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/qc.svg"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/qc_cells.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/qc_libraries.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/replay.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/report.html"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/source-versions.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/summary.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/workflow.json"
+          }
+        ],
+        "parameters": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/parameters.json"
+          }
+        ]
+      },
+      "outputs": {
+        "products": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis.h5ad"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/analysis_spec.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/block-events.jsonl"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/captures/001/qc.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cells.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_comparison.png"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_comparison.svg"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_comparison.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_membership_overlap.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/cluster_samples.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/__init__.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/advanced.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/ambient.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/analysis.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/blocks.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/catalog.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/component_jobs.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/emptydrops.R"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/inspection.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/picker.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/plots.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/ports.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/project_views.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/qc.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/replay_run.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/resources.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/scheduler.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/soupx.R"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/star_driver.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/starsolo.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/upstream.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/worker.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/code/workspace.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/embedding.png"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/embedding.svg"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/environment.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/execution-environment.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/input_manifest.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/inputs.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/parameters.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/pca.png"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/pca.svg"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/pca_variance.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/qc.png"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/qc.svg"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/qc_cells.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/qc_libraries.tsv"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/replay.py"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/report.html"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/source-versions.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/summary.json"
+          },
+          {
+            "path": "runs/073c9a6d94dd4def/results/workflow.json"
+          }
+        ],
+        "environment": [
+          {
+            "path": "runs/073c9a6d94dd4def/results/execution-environment.json"
+          }
+        ]
+      }
+    }
+  ],
+  "parent_job": null,
+  "project": "dceb6557e15b4b87",
+  "job": "073c9a6d94dd4def",
+  "state": "succeeded",
+  "project_path": "拟南芥花分生组织 · 质控与聚类"
+}

@@ -1,0 +1,25 @@
+{
+  "species": "Arabidopsis thaliana",
+  "organ": "male_gametophyte",
+  "reference": "TAIR10",
+  "modalities": [
+    "snRNA"
+  ],
+  "evidence": {
+    "status": "literature candidate, no modality-specific quantitative calibration",
+    "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4079371/"
+    ]
+  },
+  "types": {
+    "male_germline": {
+      "positive": [
+        "AT3G60460",
+        "AT1G19890",
+        "AT1G68610",
+        "AT4G11720"
+      ],
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4079371/"
+    }
+  }
+}

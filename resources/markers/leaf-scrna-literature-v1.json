@@ -1,0 +1,72 @@
+{
+  "species": "Arabidopsis thaliana",
+  "organ": "leaf",
+  "reference": "TAIR10",
+  "modalities": [
+    "scRNA"
+  ],
+  "parents": {
+    "guard_cell": "epidermis",
+    "phloem": "vasculature"
+  },
+  "evidence": {
+    "status": "independent-literature-candidate; not calibrated on new test studies",
+    "sources": [
+      "https://doi.org/10.1186/1746-4811-4-6",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3046599/",
+      "https://doi.org/10.1093/plcell/koac167"
+    ]
+  },
+  "types": {
+    "guard_cell": {
+      "positive": [
+        "AT1G22690",
+        "AT5G46240",
+        "AT2G46070"
+      ],
+      "negative": [
+        "AT5G25980"
+      ],
+      "source": "https://doi.org/10.1186/1746-4811-4-6; https://pmc.ncbi.nlm.nih.gov/articles/PMC3046599/"
+    },
+    "mesophyll": {
+      "positive": [
+        "AT1G67090",
+        "AT5G38420",
+        "AT2G05100"
+      ],
+      "negative": [
+        "AT1G22690"
+      ],
+      "source": "https://doi.org/10.1371/journal.pone.0049641; https://doi.org/10.1093/plcell/koac167"
+    },
+    "epidermis": {
+      "positive": [
+        "AT4G21750",
+        "AT1G68530",
+        "AT2G26250"
+      ],
+      "negative": [
+        "AT1G67090"
+      ],
+      "source": "https://doi.org/10.1093/plcell/koac167"
+    },
+    "phloem": {
+      "positive": [
+        "AT1G22710",
+        "AT1G79430"
+      ],
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9284295/"
+    },
+    "myrosin_idioblast": {
+      "positive": [
+        "AT5G26000",
+        "AT5G25980"
+      ],
+      "negative": [
+        "AT1G22690"
+      ],
+      "source": "https://doi.org/10.1093/plcell/koac167"
+    }
+  }
+}

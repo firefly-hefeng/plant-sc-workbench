@@ -1,0 +1,18 @@
+.mobile-stage-files{display:none}@media(max-width:850px){.mobile-stage-files{display:inline-flex}}
+.stage-rail,.stage-rail>*{min-width:0}
+.stage-buttons,.stage-upstream{display:flex;flex-wrap:wrap;align-items:end;gap:7px}
+.stage-buttons .btn{font-size:12px;padding:7px 10px}.stage-help{margin:0 0 12px;color:var(--muted);font-size:13px}
+.stage-input .fields+.stage-help{margin-top:12px}.stage-input .field select{min-width:0}
+.stage-path{margin:12px 0;color:#466554;font-size:12px}.stage-path summary{cursor:pointer}.stage-path .inline{margin-top:8px}
+.stage-selection{margin:13px 0 7px;border-top:1px solid var(--line);padding-top:9px}
+.stage-selection>span,.context-label{font-size:12px;color:var(--muted);font-weight:650}
+.stage-lib{display:flex;justify-content:space-between;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--line)}.stage-lib label{display:flex;align-items:center;gap:8px;cursor:pointer;min-width:0}
+.stage-lib input{accent-color:#237758}.stage-lib strong,.context-file strong,.stage-bound strong{font-size:13px;overflow-wrap:anywhere}.stage-lib small,.context-file small,.stage-bound small,.context-result small{display:block;color:var(--muted);font-size:11px;overflow-wrap:anywhere}
+.stage-bound{margin:12px 0;padding:10px;background:#f4f8f3;border:1px solid var(--line);border-radius:6px}
+.stage-upstream{margin-top:10px}.stage-upstream label{flex:1;min-width:150px}
+.context-label{margin:0 0 8px}.context-file{display:flex;gap:8px;align-items:start;padding:6px 0}.context-file .ico{width:15px;color:var(--green)}
+.context-file small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#stageJobPicker select{width:100%;min-width:0;margin-bottom:7px;font-size:12px}
+.context-result{border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);width:100%;display:flex;align-items:center;gap:7px;padding:9px 0;text-align:left}.context-result span{flex:1;min-width:0;overflow-wrap:anywhere}.context-result .ico{width:15px;color:#4d7260}.context-result:hover{background:#f3f8f2}
+
+

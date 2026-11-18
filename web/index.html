@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light"><title>植物单细胞 · 分析工作台</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/workspace-pages.css"><link rel="stylesheet" href="/panes.css"><link rel="stylesheet" href="/stage.css"><link rel="stylesheet" href="/work-dock.css"><link rel="stylesheet" href="/readers.css">
+</head>
+<body>
+  <a class="skip" href="#content">跳到当前工作区</a>
+  <div class="shell">
+    <aside class="rail" id="rail">
+      <div class="brand"><span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M6 21C6 12 13 7 26 6c0 11-5 18-14 18" stroke="currentColor" stroke-width="1.7"/><path d="M6 27 21 12m-6 6v-6m-1 8h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div>植物单细胞<small>分析工作台</small></div></div>
+      <div class="rail-label">工作空间</div>
+      <nav aria-label="工作空间"><button class="nav" data-view="work"><span data-icon="grid"></span>分析工作台</button><button class="nav" data-view="panes"><span data-icon="layers"></span>分区工作区</button><button class="nav" data-view="files"><span data-icon="folder"></span>文件管理器</button><button class="nav" data-view="plots"><span data-icon="picture"></span>结果可视化</button><button class="nav" data-view="runs"><span data-icon="history"></span>任务与接口</button></nav>
+      <div class="rail-label second">分析流程</div>
+      <nav id="workflowNav" aria-label="分析流程"></nav>
+      <div class="rail-bottom"><span class="dot" id="serverDot"></span><span id="serverStatus">正在连接计算服务</span></div>
+    </aside>
+    <div class="body">
+      <header class="top"><div class="crumb"><button id="menuBtn" class="icon-btn mobile-menu" aria-label="展开或收起导航"><span data-icon="menu"></span></button><span data-icon="layers"></span><span>工作空间</span><span class="slash">/</span><strong id="crumb">分析工作台</strong></div><button class="project-switch" id="selectProject"><span data-icon="folder"></span><span id="projectName">选择项目</span><span data-icon="down"></span></button></header>
+      <main id="content" tabindex="-1"></main>
+    </div>
+  </div>
+  <dialog id="dialog"><div class="dialog-frame" id="dialogBody"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+  <script src="/panels.js" defer></script>
+  <script src="/vendor/markdown-it.min.js" defer></script>
+  <script src="/previews.js" defer></script>
+  <script src="/workflow-guide.js" defer></script>
+  <script src="/files.js" defer></script>
+  <script src="/recipes.js" defer></script>
+  <script src="/charts.js" defer></script>
+  <script src="/explorer.js" defer></script>
+  <script src="/result-pages.js" defer></script>
+  <script src="/panes.js" defer></script>
+  <script src="/stage-inputs.js" defer></script>
+  <script src="/stage-files.js" defer></script>
+  <script src="/work-dock.js" defer></script>
+  <script src="/actions.js" defer></script>
+</body></html>

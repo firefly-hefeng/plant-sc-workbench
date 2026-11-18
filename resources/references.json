@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ath-tair10-62",
+    "label": "拟南芥 Col-0",
+    "species": "Arabidopsis thaliana",
+    "assembly": "TAIR10",
+    "release": "Ensembl Plants 62",
+    "source_url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-62/gff3/arabidopsis_thaliana/",
+    "sources": [
+      {
+        "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-62/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.62.chromosome.Mt.gff3.gz",
+        "file": "Arabidopsis_thaliana.TAIR10.62.chromosome.Mt.gff3.gz",
+        "bytes": 9955,
+        "sha256": "c26b14896067924effd3a8d83dd0ca7f60776a556e07ea2ca8c12331e0156eed",
+        "contig": "Mt",
+        "source_gene_count": 152
+      },
+      {
+        "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-62/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.62.chromosome.Pt.gff3.gz",
+        "file": "Arabidopsis_thaliana.TAIR10.62.chromosome.Pt.gff3.gz",
+        "bytes": 9532,
+        "sha256": "a36fb0403cdafe3afaa55ca458d5dd3d66f82dc20a37de970a7a8d81f51af6b1",
+        "contig": "Pt",
+        "source_gene_count": 133
+      }
+    ],
+    "term_url": "https://www.ensembl.org/about/articles/ensembl-content-disclaimer",
+    "retrieved": "2026-11-18",
+    "counts": {
+      "mitochondrial": 152,
+      "plastid": 133
+    },
+    "excluded_ambiguous_ids": [],
+    "file": "organelles/ath-tair10-62/genes.tsv",
+    "sha256": "26574f625f415ba4449dc1efa9848cb78af67e0e86666b137671f48379f38888"
+  },
+  {
+    "id": "osa-irgsp1-62",
+    "label": "水稻 Nipponbare",
+    "species": "Oryza sativa",
+    "assembly": "IRGSP-1.0",
+    "release": "Ensembl Plants 62",
+    "source_url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-62/gff3/oryza_sativa/",
+    "sources": [
+      {
+        "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-62/gff3/oryza_sativa/Oryza_sativa.IRGSP-1.0.62.chromosome.Mt.gff3.gz",
+        "file": "Oryza_sativa.IRGSP-1.0.62.chromosome.Mt.gff3.gz",
+        "bytes": 9928,
+        "sha256": "23a5cf776485395d814d180ecc43757731538599a31e05880d103a8e4fff5cad",
+        "contig": "Mt",
+        "source_gene_count": 95
+      },
+      {
+        "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-62/gff3/oryza_sativa/Oryza_sativa.IRGSP-1.0.62.chromosome.Pt.gff3.gz",
+        "file": "Oryza_sativa.IRGSP-1.0.62.chromosome.Pt.gff3.gz",
+        "bytes": 10410,
+        "sha256": "98543b44417243d6fe9c84b5707be5cf9287e639b2c660870cbe7db4a6604545",
+        "contig": "Pt",
+        "source_gene_count": 127
+      }
+    ],
+    "term_url": "https://www.ensembl.org/about/articles/ensembl-content-disclaimer",
+    "retrieved": "2026-11-18",
+    "counts": {
+      "mitochondrial": 95,
+      "plastid": 127
+    },
+    "excluded_ambiguous_ids": [],
+    "file": "organelles/osa-irgsp1-62/genes.tsv",
+    "sha256": "e2ba01a17982697948ffa07040dea16929ecd9696324c051a6a6c691c5a82d93"
+  },
+  {
+    "id": "zma-b73v4-48",
+    "label": "玉米 B73 v4",
+    "species": "Zea mays",
+    "assembly": "B73_RefGen_v4",
+    "release": "Ensembl Plants 48",
+    "source_url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-48/gff3/zea_mays/",
+    "sources": [
+      {
+        "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-48/gff3/zea_mays/Zea_mays.B73_RefGen_v4.48.chromosome.Mt.gff3.gz",
+        "file": "Zea_mays.B73_RefGen_v4.48.chromosome.Mt.gff3.gz",
+        "bytes": 14702,
+        "sha256": "6b22357b1a055a0cedddfb557c1d5ad2595f837f282bc9d7be32fc1b4387d0c3",
+        "contig": "Mt",
+        "source_gene_count": 229
+      },
+      {
+        "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-48/gff3/zea_mays/Zea_mays.B73_RefGen_v4.48.chromosome.Pt.gff3.gz",
+        "file": "Zea_mays.B73_RefGen_v4.48.chromosome.Pt.gff3.gz",
+        "bytes": 11993,
+        "sha256": "2cbde4b90f659a89863c4f55623ab90a5c309a319e049f00578eb33b0b3ed102",
+        "contig": "Pt",
+        "source_gene_count": 179
+      }
+    ],
+    "term_url": "https://www.ensembl.org/about/articles/ensembl-content-disclaimer",
+    "retrieved": "2026-11-18",
+    "counts": {
+      "mitochondrial": 229,
+      "plastid": 179
+    },
+    "excluded_ambiguous_ids": [],
+    "file": "organelles/zma-b73v4-48/genes.tsv",
+    "sha256": "0c13fa1e75984d6304169b5fd7e4da6b44c6efdb4c54a7a6d771b564254119cf"
+  }
+]

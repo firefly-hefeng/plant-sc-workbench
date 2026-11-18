@@ -1,0 +1,2 @@
+plot_id	id	sample	input_cells	retained_cells	median_counts	median_genes	input_genes	multiple_rules	shared_genes	discarded_counts_from_feature_join	empty_after_feature_join
+L1	GSM5320262	GSM5320262	1200	1200	1393.0	1096.5	36917	0	36917	0	0

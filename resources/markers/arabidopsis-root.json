@@ -1,0 +1,73 @@
+{
+  "species": "Arabidopsis thaliana",
+  "organ": "root",
+  "reference": "TAIR10",
+  "modalities": [
+    "scRNA"
+  ],
+  "types": {
+    "trichoblast": {
+      "positive": [
+        "AT5G49270",
+        "AT1G12560",
+        "AT1G27740"
+      ],
+      "negative": [
+        "AT1G79840"
+      ],
+      "source": "https://doi.org/10.1104/pp.18.01482"
+    },
+    "atrichoblast": {
+      "positive": [
+        "AT5G14750",
+        "AT1G79840"
+      ],
+      "negative": [
+        "AT5G49270"
+      ],
+      "source": "https://doi.org/10.1104/pp.18.01482"
+    },
+    "endodermis": {
+      "positive": [
+        "AT3G54220",
+        "AT2G36100",
+        "AT5G57620"
+      ],
+      "source": "https://doi.org/10.1073/pnas.1507691112"
+    },
+    "cortex": {
+      "positive": [
+        "AT1G09750",
+        "AT1G62500"
+      ],
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9014886/"
+    },
+    "xylem": {
+      "positive": [
+        "AT1G68810",
+        "AT4G36160",
+        "AT5G17420"
+      ],
+      "source": "https://doi.org/10.1104/pp.18.01482"
+    },
+    "phloem": {
+      "positive": [
+        "AT1G79430",
+        "AT1G22710"
+      ],
+      "source": "https://doi.org/10.1104/pp.18.01482"
+    }
+  },
+  "parents": {
+    "atrichoblast": "epidermis",
+    "trichoblast": "epidermis",
+    "cortex": "ground_tissue",
+    "endodermis": "ground_tissue",
+    "columella": "root_cap",
+    "lateral_root_cap": "root_cap",
+    "pericycle": "stele",
+    "xylem": "stele",
+    "phloem": "stele",
+    "procambium": "stele"
+  }
+}

@@ -1,0 +1,15 @@
+.venv/
+.runtime/
+workspace/
+__pycache__/
+*.pyc
+validation/
+lab-notebook/**
+!lab-notebook/*.md
+!lab-notebook/soupx-linux-lock.txt
+harness/dsh-config.json
+.env
+.env.*
+*.pem
+*.key
+

@@ -1,0 +1,965 @@
+{
+  "schema": "plant-task-io/1",
+  "action": "quantify",
+  "contract": {
+    "version": 1,
+    "inputs": [
+      {
+        "id": "libraries",
+        "type": "capture[]",
+        "label": "各物理捕获的输入",
+        "required": true
+      },
+      {
+        "id": "parameters",
+        "type": "JSON",
+        "label": "有效参数及参考",
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "raw",
+        "type": "UMI droplets",
+        "label": "未过滤液滴计数",
+        "required": true
+      },
+      {
+        "id": "counts",
+        "type": "UMI counts",
+        "label": "候选细胞原始计数",
+        "required": false
+      },
+      {
+        "id": "products",
+        "type": "file[]",
+        "label": "任务产物",
+        "required": true
+      }
+    ]
+  },
+  "inputs": {
+    "parameters": [
+      {
+        "path": "runs/3798825899a84d19/results/parameters.json"
+      }
+    ],
+    "libraries": [
+      {
+        "capture": "Flower",
+        "path": "SRR14574910",
+        "kind": "fastq",
+        "sample": "GSM5320262",
+        "modality": "snRNA",
+        "prefix": "Flower"
+      }
+    ]
+  },
+  "outputs": {
+    "products": [
+      {
+        "path": "runs/3798825899a84d19/results/block-events.jsonl"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/command.json"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Log.final.out"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Log.out"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Log.progress.out"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/quantification.json"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/SJ.out.tab"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/Barcodes.stats"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/Features.stats"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered/barcodes.tsv"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered/features.tsv"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered/matrix.mtx"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw/barcodes.tsv"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw/features.tsv"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw/matrix.mtx"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/Summary.csv"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/UMIperCellSorted.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/star-run.json"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/star.log"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/fastqc.log"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R1_001_fastqc.html"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R1_001_fastqc.zip"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R2_001_fastqc.html"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R2_001_fastqc.zip"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc.log"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc-status-check-heatmap.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_adapter_content_plot.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_base_n_content_plot.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_base_sequence_quality_plot.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_sequence_gc_content_plot_Counts.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_sequence_gc_content_plot_Percentages.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_sequence_quality_scores_plot.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_sequence_counts_plot.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_sequence_duplication_levels_plot.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/llms-full.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc.log"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc.parquet"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_citations.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_data.json"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_fastqc.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_general_stats.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_software_versions.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_sources.txt"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_report.html"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/read_qc/receipt.json"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/__init__.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/advanced.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/ambient.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/analysis.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/blocks.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/catalog.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/component_jobs.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/emptydrops.R"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/inspection.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/picker.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/plots.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/ports.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/project_views.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/qc.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/replay_run.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/resources.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/scheduler.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/soupx.R"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/stage_files.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/stage_inputs.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/star_driver.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/starsolo.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/upstream.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/worker.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/code/workspace.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/execution-environment.json"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/inputs.json"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/parameters.json"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/replay.py"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/source-versions.json"
+      },
+      {
+        "path": "runs/3798825899a84d19/results/workflow.json"
+      }
+    ],
+    "raw": [
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw"
+      }
+    ],
+    "counts": [
+      {
+        "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered"
+      }
+    ]
+  },
+  "input_files": [
+    {
+      "path": "3M-february-2018.txt",
+      "bytes": 115512960,
+      "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "path": "chrLength.txt",
+      "bytes": 59,
+      "sha256": "0a0d8265935c9d440b611b6d2c0878c23fbce3d63c04b7abb677b53e270eac91"
+    },
+    {
+      "path": "chrName.txt",
+      "bytes": 16,
+      "sha256": "e20d0fd9cccf7dd79dc1bfa96f38ae677e3415db0d25f085a4e5c0e2225b1153"
+    },
+    {
+      "path": "chrNameLength.txt",
+      "bytes": 75,
+      "sha256": "a5db7271966a6274de7181816b0f09445196b203d3854502722bb6980ad1ef64"
+    },
+    {
+      "path": "chrStart.txt",
+      "bytes": 68,
+      "sha256": "b51b029d25a05ebc33386e8a054d41574f0d0ec907cdb8d806616dbefe4b4abf"
+    },
+    {
+      "path": "exonGeTrInfo.tab",
+      "bytes": 9876292,
+      "sha256": "bd89736c1317b8b4836292402d8a193f73fbd56c2a02f27d9bfa710cba3d98d1"
+    },
+    {
+      "path": "exonInfo.tab",
+      "bytes": 4079930,
+      "sha256": "79e858b1d79550df3ba4982106b804e72d97161b4ac2cc12f64cbb8109fedcf2"
+    },
+    {
+      "path": "geneInfo.tab",
+      "bytes": 1062316,
+      "sha256": "41b646f89fec07bb22fd21efd20ea56cb6829e22d3068c8e21c6171a09b4e06f"
+    },
+    {
+      "path": "Genome",
+      "bytes": 146955531,
+      "sha256": "8b0528edb70cb95b22b749ed5974f648c088e653de68af4f36f047aeed309b8f"
+    },
+    {
+      "path": "genomeParameters.txt",
+      "bytes": 1383,
+      "sha256": "bd7735869b9f6ab2d8fe6c3cd91c05dd5814d3b000f944361d84dd3b953c7958"
+    },
+    {
+      "path": "index-source.json",
+      "bytes": 336,
+      "sha256": "1a755f6c68cde456bce488d88fbad4b29d64e3abd91e75f36327c5471167e4b8"
+    },
+    {
+      "path": "SA",
+      "bytes": 1202175863,
+      "sha256": "94e2df0b31ae37822c0925f0e1f7fec2019b6f2a2ecc2246b477c371fdc1eb99"
+    },
+    {
+      "path": "SAindex",
+      "bytes": 97867203,
+      "sha256": "cb8da567a1b65f6afb83f4079c23d16bc0ec7b6d00464bcf917f0bce3cef02c3"
+    },
+    {
+      "path": "sjdbInfo.txt",
+      "bytes": 3453360,
+      "sha256": "2b7805f58c377af08f42d3bc4de92cd5592cbd138adbb1cd96a5138025a842eb"
+    },
+    {
+      "path": "sjdbList.fromGTF.out.tab",
+      "bytes": 3533008,
+      "sha256": "ce32af844894314ed535099f2c4114f7b4f4a0d3f71b24efc679200812e8980c"
+    },
+    {
+      "path": "sjdbList.out.tab",
+      "bytes": 2784201,
+      "sha256": "e4e4333e59006e084ac3902255fc606c3ee70f4d5d86caf942763091fb52e0db"
+    },
+    {
+      "path": "transcriptInfo.tab",
+      "bytes": 3002405,
+      "sha256": "0ac144b1bb783868e049225cc5a5fab1aeec394974b3ae81e725784ded122b8b"
+    },
+    {
+      "path": "Flower_S1_L001_R1_001.fastq.gz",
+      "bytes": 21771714,
+      "sha256": "7fd9a3a1ba5d88b1325230729ae6c028f9eb8ac29d7071409c4a69d39104864f"
+    },
+    {
+      "path": "Flower_S1_L001_R2_001.fastq.gz",
+      "bytes": 79614492,
+      "sha256": "718e47c27dd31c6727a433cbc15333337e4b9741c60946f210f4972f115ed7c5"
+    }
+  ],
+  "modules": [
+    {
+      "module": "reads",
+      "version": 1,
+      "engine": "FastQC / MultiQC",
+      "capture": "Flower",
+      "parameters": {
+        "threads": 4
+      },
+      "observed": {},
+      "inputs": {
+        "reads": [
+          {
+            "path": "Flower_S1_L001_R1_001.fastq.gz"
+          },
+          {
+            "path": "Flower_S1_L001_R2_001.fastq.gz"
+          }
+        ]
+      },
+      "outputs": {
+        "report": [
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R1_001_fastqc.html"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R2_001_fastqc.html"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_report.html"
+          }
+        ]
+      }
+    },
+    {
+      "module": "quantify",
+      "version": 1,
+      "engine": "STARsolo 2.7.11b",
+      "capture": "Flower",
+      "parameters": {
+        "quantifier": "starsolo",
+        "chemistry": "SC3Pv3_10",
+        "include_introns": true,
+        "threads": 4,
+        "memory_gb": 16
+      },
+      "observed": {},
+      "inputs": {
+        "reads": [
+          {
+            "path": "Flower_S1_L001_R1_001.fastq.gz"
+          },
+          {
+            "path": "Flower_S1_L001_R2_001.fastq.gz"
+          }
+        ],
+        "index": [
+          {
+            "path": "TAIR10-62-index"
+          }
+        ],
+        "whitelist": [
+          {
+            "path": "3M-february-2018.txt"
+          }
+        ]
+      },
+      "outputs": {
+        "raw": [
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw"
+          }
+        ],
+        "counts": [
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered"
+          }
+        ]
+      }
+    },
+    {
+      "module": "export",
+      "version": 1,
+      "engine": "AnnData / Matplotlib",
+      "capture": null,
+      "parameters": {},
+      "observed": {},
+      "inputs": {
+        "products": [
+          {
+            "path": "runs/3798825899a84d19/results/block-events.jsonl"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/command.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Log.final.out"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Log.out"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Log.progress.out"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/quantification.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/SJ.out.tab"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/Barcodes.stats"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/Features.stats"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered/barcodes.tsv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered/features.tsv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered/matrix.mtx"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw/barcodes.tsv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw/features.tsv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw/matrix.mtx"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/Summary.csv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/UMIperCellSorted.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/star-run.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/star.log"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/fastqc.log"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R1_001_fastqc.html"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R1_001_fastqc.zip"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R2_001_fastqc.html"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R2_001_fastqc.zip"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc.log"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc-status-check-heatmap.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_adapter_content_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_base_n_content_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_base_sequence_quality_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_sequence_gc_content_plot_Counts.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_sequence_gc_content_plot_Percentages.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_sequence_quality_scores_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_sequence_counts_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_sequence_duplication_levels_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/llms-full.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc.log"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc.parquet"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_citations.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_data.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_fastqc.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_general_stats.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_software_versions.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_sources.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_report.html"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/receipt.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/__init__.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/advanced.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/ambient.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/analysis.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/blocks.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/catalog.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/component_jobs.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/emptydrops.R"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/inspection.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/picker.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/plots.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/ports.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/project_views.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/qc.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/replay_run.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/resources.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/scheduler.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/soupx.R"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/stage_files.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/stage_inputs.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/star_driver.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/starsolo.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/upstream.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/worker.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/workspace.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/execution-environment.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/inputs.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/parameters.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/replay.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/source-versions.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/workflow.json"
+          }
+        ],
+        "parameters": [
+          {
+            "path": "runs/3798825899a84d19/results/parameters.json"
+          }
+        ]
+      },
+      "outputs": {
+        "products": [
+          {
+            "path": "runs/3798825899a84d19/results/block-events.jsonl"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/command.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Log.final.out"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Log.out"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Log.progress.out"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/quantification.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/SJ.out.tab"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/Barcodes.stats"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/Features.stats"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered/barcodes.tsv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered/features.tsv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/filtered/matrix.mtx"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw/barcodes.tsv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw/features.tsv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/raw/matrix.mtx"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/Summary.csv"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/Solo.out/GeneFull/UMIperCellSorted.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/star-run.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/quantification/star.log"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/fastqc.log"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R1_001_fastqc.html"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R1_001_fastqc.zip"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R2_001_fastqc.html"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/Flower_S1_L001_R2_001_fastqc.zip"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc.log"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc-status-check-heatmap.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_adapter_content_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_base_n_content_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_base_sequence_quality_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_sequence_gc_content_plot_Counts.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_sequence_gc_content_plot_Percentages.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_per_sequence_quality_scores_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_sequence_counts_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/fastqc_sequence_duplication_levels_plot.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/llms-full.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc.log"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc.parquet"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_citations.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_data.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_fastqc.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_general_stats.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_software_versions.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_data/multiqc_sources.txt"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/multiqc_report.html"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/capture-001/read_qc/receipt.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/__init__.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/advanced.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/ambient.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/analysis.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/blocks.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/catalog.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/component_jobs.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/emptydrops.R"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/inspection.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/picker.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/plots.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/ports.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/project_views.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/qc.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/replay_run.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/resources.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/scheduler.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/soupx.R"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/stage_files.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/stage_inputs.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/star_driver.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/starsolo.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/upstream.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/worker.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/code/workspace.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/execution-environment.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/inputs.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/parameters.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/replay.py"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/source-versions.json"
+          },
+          {
+            "path": "runs/3798825899a84d19/results/workflow.json"
+          }
+        ],
+        "environment": [
+          {
+            "path": "runs/3798825899a84d19/results/execution-environment.json"
+          }
+        ]
+      }
+    }
+  ],
+  "parent_job": null,
+  "project": "d02e9770456b451d",
+  "job": "3798825899a84d19",
+  "state": "succeeded",
+  "project_path": "拟南芥花分生组织 · 测序质检"
+}

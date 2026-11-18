@@ -1,0 +1,37 @@
+.share-notice{margin:0;padding:8px clamp(14px,3vw,44px);background:#eaf3e9;border-bottom:1px solid var(--line);color:#28593e;font-size:13px;line-height:1.6}
+.workflow-guide{border:1px solid #cbded0;border-left:3px solid #3b8060;border-radius:8px;background:#f4f8f3;padding:14px 17px;color:var(--ink);min-width:0}
+.workflow-guide h2{font-size:16px;line-height:1.5;margin:0 0 4px;color:#214c38}
+.workflow-guide p,.workflow-guide dd,.module-explanation{font-size:13px;line-height:1.65;margin:0}
+.guide-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.guide-title .text-btn{font-size:12px;white-space:nowrap}
+.guide-route{margin:12px 0 0;padding-left:24px}.guide-route li{padding:3px 0;color:#3c6550}.guide-route button{display:grid;gap:3px;text-align:left;width:100%;padding:9px 12px;color:var(--dark);background:white;border:1px solid var(--line);border-radius:6px;cursor:pointer}.guide-route button:hover,.guide-route button[aria-current=step]{background:#f1f7f1;border-color:#9bbda6}
+.guide-route span{font-size:13px}.guide-route small{font-size:12px;color:var(--muted)}
+.workflow-guide summary{font-size:12px;font-weight:650;color:#276749;cursor:pointer;padding:7px 0 0}
+.workflow-guide dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px 13px;border-top:1px solid #d9e5d9;padding-top:11px;margin:10px 0 0}
+.workflow-guide dt{font-weight:650;font-size:12px;color:#365c45;line-height:1.85}
+.workflow-guide dd{overflow-wrap:anywhere}
+.module-explanation{margin:12px 0 4px;color:var(--dark)}
+.preview-schema summary{cursor:pointer;color:var(--green);padding:3px 12px;font-size:12px}.file-reader .dock-table td{max-width:48ch;overflow-wrap:anywhere}
+.preview-image-button{display:block;width:100%;border:0;padding:0;background:transparent;cursor:zoom-in}
+.file-reader{min-width:0;max-width:100%}.preview-note{margin:0;padding:8px 12px;color:var(--muted);font-size:12px}
+.native-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 12px;border-bottom:1px solid var(--line);background:#f7faf6;font-size:12px;color:var(--muted)}
+.native-tools a{font-size:12px}.native-frame{display:block;width:100%;height:60vh;min-height:240px;border:0;background:white}
+.dock-panel .native-frame{height:clamp(280px,47vh,630px)}.gallery-report .native-frame{height:66vh}.dock-panel .gallery-report .native-frame{height:clamp(280px,48vh,630px)}
+.native-expand{white-space:nowrap}
+#dock-plots:not([hidden]):has(.gallery-report){display:flex;flex-direction:column}
+#dock-plots:has(.gallery-report) .plots-shell,#dock-plots:has(.gallery-report) .plot-main{flex:1;min-height:0}
+#dock-plots .gallery-report{flex:1;min-height:165px}
+#dock-plots .gallery-report .native-frame{height:100%;min-height:165px}
+#dock-plots:has(.gallery-report) .pane-foot{display:none}
+#dock-plots:has(.gallery-report) .plot-heading{padding:5px 10px}
+#dock-plots:has(.gallery-report) .plot-heading h2{font-size:13px;overflow-wrap:anywhere}
+#dock-plots:has(.gallery-report) .plot-heading .btn{min-height:27px;padding:4px 8px;font-size:12px}
+.native-markdown{padding:12px 16px;color:var(--ink);font-size:14px;line-height:1.7;overflow:auto;overflow-wrap:anywhere}
+.native-markdown h1,.native-markdown h2,.native-markdown h3{line-height:1.4;color:var(--dark);margin:1em 0 .4em}
+.native-markdown h1{font-size:20px}.native-markdown h2{font-size:17px}.native-markdown h3{font-size:15px}
+.native-markdown>:first-child{margin-top:0}.native-markdown p{margin:.65em 0}.native-markdown img{max-width:100%;height:auto}
+.native-markdown ul,.native-markdown ol{padding-left:1.6em}.native-markdown li+li{margin-top:.4em}
+.native-markdown table{border-collapse:collapse;font-size:13px}.native-markdown td,.native-markdown th{padding:5px 8px;border:1px solid var(--line)}
+.native-markdown blockquote{margin-left:0;padding-left:12px;border-left:3px solid #9ebaac}
+.native-markdown a{color:#146547;text-decoration:underline}.native-markdown pre{overflow:auto;padding:10px;background:#f4f6f4}
+@media(max-width:460px){.workflow-guide dl{display:block}.workflow-guide dt:not(:first-child){margin-top:8px}.native-markdown{padding:10px}.dock-preview-head{flex-wrap:wrap}}
+

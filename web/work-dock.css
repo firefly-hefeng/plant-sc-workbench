@@ -1,0 +1,63 @@
+/* The analysis and the two workspace panes remain mounted independently. */
+.work-layout{display:grid;grid-template-columns:minmax(360px,.94fr) minmax(420px,1.06fr);align-items:start;gap:18px}
+#workSettings,#workDock,#workDockBody{min-width:0}
+#workDock{position:sticky;top:10px;overflow:hidden;border:1px solid var(--line);border-radius:10px;background:#fff}
+.work-dock-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;background:#edf4ec;border-bottom:1px solid var(--line)}
+.work-dock-head h2{margin:0;display:flex;align-items:center;gap:7px;font-size:15px;color:var(--dark)}
+.work-dock-head h2 .ico{width:17px}.work-dock-head .btn{min-height:28px;padding:4px 8px;font-size:12px}
+#workDock .dock-grid{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,.8fr) minmax(0,1.2fr);gap:0;height:clamp(550px,calc(100dvh - 245px),850px);min-height:0}
+#workDock #dockDivider{display:none}
+#workDock .dock-group{border:0;border-radius:0;min-height:0;max-height:none}
+#workDock #group-right{border-top:3px solid #d4e1d4}
+#workDock .dock-grid[data-focus=left],#workDock .dock-grid[data-focus=right]{grid-template-rows:minmax(0,1fr)}
+#workDock .dock-nav [role=tab]{padding:9px 10px;font-size:12px}
+#workDock .dock-nav .ico{width:14px}
+#workDock .dock-grid .embed-canvas{height:320px}
+#workDock .dock-grid[data-focus=""] .plot-paper img{max-height:clamp(145px,calc(42dvh - 220px),340px)}
+#workDock .stage-rail{display:block;padding:10px}
+#workDock .stage-rail .cap{padding:8px 12px}
+#workDock .stage-rail .pad{padding:10px 12px}
+#workDock .stage-rail .card+.card{margin-top:8px}
+#workDock .stage-rail .card{box-shadow:none}
+#workDock .file-cell{min-width:110px}
+#workDock .dock-actions{padding:6px 10px}
+#workDock .explorer-side,#workDock .plot-side{padding:5px 10px}
+#workDock .plots-bar{margin-bottom:4px}
+#workDock .pathbar,#workDock .file-actions{padding:5px 10px}
+#workDock .explorer-list .table th,#workDock .explorer-list .table td{font-size:12px;padding:6px 8px}
+.work-layout[data-expanded=true]{grid-template-columns:minmax(0,1fr)}
+.work-layout[data-expanded=true] #workSettings{display:none}
+@media(min-width:901px){
+  .work-layout[data-expanded=true] #workDock .dock-grid{grid-template-columns:minmax(0,var(--split,44%)) 12px minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+  .work-layout[data-expanded=true] #workDock .dock-grid[data-focus=""] #dockDivider{display:block}
+  .work-layout[data-expanded=true] #workDock .dock-grid:not([data-focus=""]){grid-template-columns:minmax(0,1fr)}
+  .work-layout[data-expanded=true] #workDock #group-right{border-top:0}
+}
+.dock-plot-controls{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:5px;padding:6px 10px;font-size:12px}.dock-plot-controls label{min-width:0;max-width:100%}.dock-plot-controls select{max-width:100%;min-width:0}.dock-plot-controls .btn{min-height:28px;font-size:12px;padding:4px 8px}
+.handoff-panel{padding:13px}
+.handoff-panel .fields{margin:0 0 10px}
+.handoff-panel .field{min-width:0}
+.handoff-panel .field select{max-width:100%;min-width:0}
+.handoff-row,.stage-result-row{display:flex;align-items:center;gap:8px}
+.handoff-row{padding:10px 0 14px;border-top:1px solid var(--line)}
+.handoff-row>div,.stage-result-row>.context-result{flex:1;min-width:0}
+.handoff-row strong,.handoff-row small{display:block;overflow-wrap:anywhere}
+.handoff-row small{font-size:11px;color:var(--muted)}
+.handoff-row strong{font-size:13px}
+.handoff-btn,.stage-source-link{color:var(--green);background:#f3f8f1;font-size:12px}
+.handoff-btn{min-height:29px;padding:4px 8px;white-space:nowrap}
+.stage-source-link{margin:6px 0}
+@media(max-width:1090px){
+  .work-layout{grid-template-columns:minmax(0,1fr)}#workDock{position:static}
+  .mobile-stage-files{display:inline-flex}
+  #workLayout:not([data-expanded=true]) #workDock{grid-row:2}
+}
+@media(max-width:600px){
+  #workDock .dock-nav{padding:0 3px}#workDock .dock-nav [role=tab]{padding:9px 6px}
+  #workDock .dock-nav [role=tab]>.ico{display:none}
+  #workDock .dock-grid{height:auto;grid-template-rows:auto auto}
+  #workDock .dock-group{max-height:72dvh;min-height:210px}
+  #workDock .handoff-panel .fields{grid-template-columns:minmax(0,1fr)}
+  #workDock .dock-focus{font-size:11px}
+}
+

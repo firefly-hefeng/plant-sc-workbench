@@ -1,0 +1,26 @@
+[
+  {
+    "name": "STAR",
+    "url": "https://raw.githubusercontent.com/alexdobin/STAR/2.7.11b/bin/Linux_x86_64_static/STAR",
+    "bytes": 7187536,
+    "sha256": "36e94b899a56b0ea5de5d65e722f55bc552b6713bd2d1e83a5c2abbd06c9881a"
+  },
+  {
+    "name": "TAIR10.fa.gz",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-62/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz",
+    "bytes": 36462703,
+    "sha256": "80a13166003333ba4982b57abdb3d2b62037bc831f4da29ea378c1b776fff8e2"
+  },
+  {
+    "name": "TAIR10.62.gtf.gz",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-62/gtf/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.62.gtf.gz",
+    "bytes": 11240896,
+    "sha256": "53580fe0b8b8593a5cee6e0925c94f172bded7b133f5deb09ec36885e3541f18"
+  },
+  {
+    "name": "3M-february-2018.txt.gz",
+    "url": "https://teichlab.github.io/scg_lib_structs/data/10X-Genomics/3M-february-2018.txt.gz",
+    "bytes": 18350152,
+    "sha256": "6f5c08bd6c0c63e7cd4f62bc5ec47024baaf6b230524f313799b9f5431df7b37"
+  }
+]
